@@ -1,0 +1,421 @@
+{
+  "schema": "anticloud.tier-bench/1",
+  "project": "SUPERVISION",
+  "source": {
+    "repo_path": "E:\\fenta\\Downloads\\The Anticloud\\ANTICLOUD_REPOS\\SURVEILLANCE_CAMERA\\SUPERVISION\\UPSTREAM_CLONE",
+    "git": {
+      "head": "f59aa0da3bc244d937f87b8f56fe7c893e55aab5",
+      "url": "https://github.com/roboflow/supervision",
+      "branch": "develop",
+      "committed_at": "2026-10-01T05:12:40+09:00"
+    }
+  },
+  "metrics": {
+    "files_total": 389,
+    "source_files_scanned": 217,
+    "lines_of_code": 102731,
+    "languages": {
+      ".py": 236,
+      ".md": 69,
+      ".ipynb": 16,
+      ".txt": 13,
+      ".png": 11,
+      "(none)": 8,
+      ".js": 7,
+      ".jpg": 5,
+      ".html": 5,
+      ".json": 4,
+      ".svg": 3,
+      ".yml": 2,
+      ".sh": 2,
+      ".css": 2,
+      ".yaml": 1
+    }
+  },
+  "licence": {
+    "spdx": "MIT",
+    "class": "A",
+    "source_file": "LICENSE.md",
+    "redistribution_allowed": true
+  },
+  "dependencies": {
+    "count": 10,
+    "unique": 10,
+    "by_ecosystem": {
+      "pypi": 10
+    },
+    "list": [
+      {
+        "ecosystem": "pypi",
+        "name": "av",
+        "version": ">=14.2",
+        "source_file": "pyproject.toml",
+        "raw": "av>=14.2"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "defusedxml",
+        "version": ">=0.7.1",
+        "source_file": "pyproject.toml",
+        "raw": "defusedxml>=0.7.1"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "matplotlib",
+        "version": ">=3.6",
+        "source_file": "pyproject.toml",
+        "raw": "matplotlib>=3.6"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "numpy",
+        "version": ">=1.21.2",
+        "source_file": "pyproject.toml",
+        "raw": "numpy>=1.21.2"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "pillow",
+        "version": ">=9.4",
+        "source_file": "pyproject.toml",
+        "raw": "pillow>=9.4"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "pydeprecate",
+        "version": ">=0.9",
+        "source_file": "pyproject.toml",
+        "raw": "pydeprecate>=0.9"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "pyyaml",
+        "version": ">=5.3",
+        "source_file": "pyproject.toml",
+        "raw": "pyyaml>=5.3"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "requests",
+        "version": ">=2.26",
+        "source_file": "pyproject.toml",
+        "raw": "requests>=2.26"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "scipy",
+        "version": ">=1.10",
+        "source_file": "pyproject.toml",
+        "raw": "scipy>=1.10"
+      },
+      {
+        "ecosystem": "pypi",
+        "name": "tqdm",
+        "version": ">=4.62.3",
+        "source_file": "pyproject.toml",
+        "raw": "tqdm>=4.62.3"
+      }
+    ]
+  },
+  "owasp_top10": {
+    "total_findings": 7,
+    "files_with_findings": 7,
+    "severity": {
+      "high": 1,
+      "medium": 4,
+      "low": 2
+    },
+    "categories": {
+      "A01-BrokenAccessControl": {
+        "count": 0,
+        "findings": []
+      },
+      "A02-CryptographicFailures": {
+        "count": 4,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "tests/assets/test_downloader.py",
+            "line": 27,
+            "cwe": "CWE-327",
+            "snippet": "test_hash = \"9473fdd0d880a43c21b7778d34872157\"  # MD5 of \"test content\""
+          },
+          {
+            "severity": "medium",
+            "file": "tests/assets/test_list.py",
+            "line": 68,
+            "cwe": "CWE-327",
+            "snippet": "assert len(md5_hash) == 32  # MD5 hash length"
+          },
+          {
+            "severity": "medium",
+            "file": "src/supervision/utils/image.py",
+            "line": 32,
+            "cwe": "CWE-327",
+            "snippet": "\"\"\"Build the cache file path for a URL: `<cache root>/<md5(url)><suffix>`.\"\"\""
+          },
+          {
+            "severity": "medium",
+            "file": "src/supervision/assets/downloader.py",
+            "line": 30,
+            "cwe": "CWE-327",
+            "snippet": "computed_md5_hash = md5(file_contents, usedforsecurity=False)"
+          }
+        ]
+      },
+      "A03-Injection": {
+        "count": 1,
+        "findings": [
+          {
+            "severity": "high",
+            "file": "src/supervision/classification/core.py",
+            "line": 148,
+            "cwe": "CWE-95",
+            "snippet": ").eval()"
+          }
+        ]
+      },
+      "A04-InsecureDesign": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "src/supervision/annotators/core.py",
+            "line": 419,
+            "cwe": "CWE-",
+            "snippet": "# TODO: replace isinstance dispatch with a MaskLike Protocol (separate PR)"
+          },
+          {
+            "severity": "low",
+            "file": "examples/time_in_zone/scripts/stream_from_file.py",
+            "line": 86,
+            "cwe": "CWE-",
+            "snippet": "process = subprocess.run(command)  # noqa: S603 # TODO: Validate command input to prevent execution of untrusted input"
+          }
+        ]
+      },
+      "A05-SecurityMisconfiguration": {
+        "count": 0,
+        "findings": []
+      },
+      "A06-VulnerableComponents": {
+        "count": 0,
+        "findings": []
+      },
+      "A07-AuthFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A08-SoftwareDataIntegrity": {
+        "count": 0,
+        "findings": []
+      },
+      "A09-LoggingMonitoringFailures": {
+        "count": 0,
+        "findings": []
+      },
+      "A10-SSRF": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "owasp_llm_top10": {
+    "total_findings": 5,
+    "files_with_findings": 5,
+    "severity": {
+      "high": 0,
+      "medium": 2,
+      "low": 3
+    },
+    "categories": {
+      "LLM01-PromptInjection": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM02-SensitiveInfoDisclosure": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM03-SupplyChain": {
+        "count": 2,
+        "findings": [
+          {
+            "severity": "medium",
+            "file": "src/supervision/key_points/core.py",
+            "line": 242,
+            "cwe": "CWE-494",
+            "snippet": "detection_processor = AutoProcessor.from_pretrained(DETECTION_MODEL_ID, use_fast=True)"
+          },
+          {
+            "severity": "medium",
+            "file": "src/supervision/detection/core.py",
+            "line": 181,
+            "cwe": "CWE-494",
+            "snippet": "processor = DetrImageProcessor.from_pretrained(\"facebook/detr-resnet-50\")"
+          }
+        ]
+      },
+      "LLM04-DataPoisoning": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM05-ImproperOutputHandling": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM06-ExcessiveAgency": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM07-SystemPromptLeak": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM08-VectorEmbeddingWeaknesses": {
+        "count": 3,
+        "findings": [
+          {
+            "severity": "low",
+            "file": "tests/utils/test_conversion.py",
+            "line": 272,
+            "cwe": "CWE-",
+            "snippet": "rather than having its luma and chroma planes drawn as BGR.\"\"\""
+          },
+          {
+            "severity": "low",
+            "file": "tests/cv2/test_image.py",
+            "line": 499,
+            "cwe": "CWE-",
+            "snippet": "def _jpeg_chroma_subsampling(data: bytes) -> int:"
+          },
+          {
+            "severity": "low",
+            "file": "src/supervision/_cv2/_color.py",
+            "line": 69,
+            "cwe": "CWE-",
+            "snippet": "chroma = value * saturation"
+          }
+        ]
+      },
+      "LLM09-Misinformation": {
+        "count": 0,
+        "findings": []
+      },
+      "LLM10-UnboundedConsumption": {
+        "count": 0,
+        "findings": []
+      }
+    }
+  },
+  "sbom": {
+    "bomFormat": "CycloneDX",
+    "specVersion": "1.5",
+    "serialNumber": "urn:uuid:d178e021-0c8a-5c0c-8f24-e57cf510b82b",
+    "version": 1,
+    "metadata": {
+      "timestamp": "2026-10-06T07:47:14Z",
+      "component": {
+        "type": "application",
+        "name": "SUPERVISION",
+        "version": "f59aa0da3bc2",
+        "bom-ref": "pkg:generic/anticloud/SUPERVISION@f59aa0da3bc2",
+        "purl": "pkg:generic/anticloud/SUPERVISION@f59aa0da3bc2",
+        "licenses": [
+          {
+            "license": {
+              "id": "MIT"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "anticloud:source-commit",
+          "value": "f59aa0da3bc244d937f87b8f56fe7c893e55aab5"
+        },
+        {
+          "name": "anticloud:source-url",
+          "value": "https://github.com/roboflow/supervision"
+        },
+        {
+          "name": "anticloud:tier",
+          "value": "tier-agent"
+        }
+      ]
+    },
+    "components": [
+      {
+        "type": "library",
+        "name": "av",
+        "version": ">=14.2",
+        "purl": "pkg:pypi/av@14.2",
+        "bom-ref": "pypi/av@>=14.2"
+      },
+      {
+        "type": "library",
+        "name": "defusedxml",
+        "version": ">=0.7.1",
+        "purl": "pkg:pypi/defusedxml@0.7.1",
+        "bom-ref": "pypi/defusedxml@>=0.7.1"
+      },
+      {
+        "type": "library",
+        "name": "matplotlib",
+        "version": ">=3.6",
+        "purl": "pkg:pypi/matplotlib@3.6",
+        "bom-ref": "pypi/matplotlib@>=3.6"
+      },
+      {
+        "type": "library",
+        "name": "numpy",
+        "version": ">=1.21.2",
+        "purl": "pkg:pypi/numpy@1.21.2",
+        "bom-ref": "pypi/numpy@>=1.21.2"
+      },
+      {
+        "type": "library",
+        "name": "pillow",
+        "version": ">=9.4",
+        "purl": "pkg:pypi/pillow@9.4",
+        "bom-ref": "pypi/pillow@>=9.4"
+      },
+      {
+        "type": "library",
+        "name": "pydeprecate",
+        "version": ">=0.9",
+        "purl": "pkg:pypi/pydeprecate@0.9",
+        "bom-ref": "pypi/pydeprecate@>=0.9"
+      },
+      {
+        "type": "library",
+        "name": "pyyaml",
+        "version": ">=5.3",
+        "purl": "pkg:pypi/pyyaml@5.3",
+        "bom-ref": "pypi/pyyaml@>=5.3"
+      },
+      {
+        "type": "library",
+        "name": "requests",
+        "version": ">=2.26",
+        "purl": "pkg:pypi/requests@2.26",
+        "bom-ref": "pypi/requests@>=2.26"
+      },
+      {
+        "type": "library",
+        "name": "scipy",
+        "version": ">=1.10",
+        "purl": "pkg:pypi/scipy@1.10",
+        "bom-ref": "pypi/scipy@>=1.10"
+      },
+      {
+        "type": "library",
+        "name": "tqdm",
+        "version": ">=4.62.3",
+        "purl": "pkg:pypi/tqdm@4.62.3",
+        "bom-ref": "pypi/tqdm@>=4.62.3"
+      }
+    ]
+  },
+  "elapsed_seconds": 23.15
+}

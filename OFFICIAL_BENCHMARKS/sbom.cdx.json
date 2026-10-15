@@ -1,0 +1,109 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:d178e021-0c8a-5c0c-8f24-e57cf510b82b",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-06T07:47:14Z",
+    "component": {
+      "type": "application",
+      "name": "SUPERVISION",
+      "version": "f59aa0da3bc2",
+      "bom-ref": "pkg:generic/anticloud/SUPERVISION@f59aa0da3bc2",
+      "purl": "pkg:generic/anticloud/SUPERVISION@f59aa0da3bc2",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "anticloud:source-commit",
+        "value": "f59aa0da3bc244d937f87b8f56fe7c893e55aab5"
+      },
+      {
+        "name": "anticloud:source-url",
+        "value": "https://github.com/roboflow/supervision"
+      },
+      {
+        "name": "anticloud:tier",
+        "value": "tier-agent"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "av",
+      "version": ">=14.2",
+      "purl": "pkg:pypi/av@14.2",
+      "bom-ref": "pypi/av@>=14.2"
+    },
+    {
+      "type": "library",
+      "name": "defusedxml",
+      "version": ">=0.7.1",
+      "purl": "pkg:pypi/defusedxml@0.7.1",
+      "bom-ref": "pypi/defusedxml@>=0.7.1"
+    },
+    {
+      "type": "library",
+      "name": "matplotlib",
+      "version": ">=3.6",
+      "purl": "pkg:pypi/matplotlib@3.6",
+      "bom-ref": "pypi/matplotlib@>=3.6"
+    },
+    {
+      "type": "library",
+      "name": "numpy",
+      "version": ">=1.21.2",
+      "purl": "pkg:pypi/numpy@1.21.2",
+      "bom-ref": "pypi/numpy@>=1.21.2"
+    },
+    {
+      "type": "library",
+      "name": "pillow",
+      "version": ">=9.4",
+      "purl": "pkg:pypi/pillow@9.4",
+      "bom-ref": "pypi/pillow@>=9.4"
+    },
+    {
+      "type": "library",
+      "name": "pydeprecate",
+      "version": ">=0.9",
+      "purl": "pkg:pypi/pydeprecate@0.9",
+      "bom-ref": "pypi/pydeprecate@>=0.9"
+    },
+    {
+      "type": "library",
+      "name": "pyyaml",
+      "version": ">=5.3",
+      "purl": "pkg:pypi/pyyaml@5.3",
+      "bom-ref": "pypi/pyyaml@>=5.3"
+    },
+    {
+      "type": "library",
+      "name": "requests",
+      "version": ">=2.26",
+      "purl": "pkg:pypi/requests@2.26",
+      "bom-ref": "pypi/requests@>=2.26"
+    },
+    {
+      "type": "library",
+      "name": "scipy",
+      "version": ">=1.10",
+      "purl": "pkg:pypi/scipy@1.10",
+      "bom-ref": "pypi/scipy@>=1.10"
+    },
+    {
+      "type": "library",
+      "name": "tqdm",
+      "version": ">=4.62.3",
+      "purl": "pkg:pypi/tqdm@4.62.3",
+      "bom-ref": "pypi/tqdm@>=4.62.3"
+    }
+  ]
+}
